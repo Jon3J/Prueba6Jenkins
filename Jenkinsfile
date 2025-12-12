@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment{
         INSTAGRAM_X="@Xpiritu"
+        MENSAJE="ABDUZCAN!"
     }
     stages{
         stage("Saludo 1"){
@@ -36,6 +37,11 @@ pipeline {
                 sh "echo ${INSTAGRAM}"
                 sh "echo $INSTAGRAM"
                 sh """echo $INSTAGRAM"""
+            }
+        }
+        stage("Imprimir el mensaje desde environment"){
+            steps{
+                echo "${env.MENSAJE}"
             }
         }
     }
