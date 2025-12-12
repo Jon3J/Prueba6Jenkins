@@ -3,6 +3,7 @@ pipeline {
     environment{
         INSTAGRAM_X="@Xpiritu"
         MENSAJE="ABDUZCAN!"
+        MENSAJE2="Me gusta aprender Jenkins"
     }
     stages{
         stage("Saludo 1"){
@@ -42,6 +43,11 @@ pipeline {
         stage("Imprimir el mensaje desde environment"){
             steps{
                 echo "${env.MENSAJE}"
+            }
+        }
+        stage("Imprimir un segundo mensaje"){
+            steps{
+                sh "echo '${env.MENSAJE2}'"
             }
         }
     }
